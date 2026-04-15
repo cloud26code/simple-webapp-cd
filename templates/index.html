@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>Summer Lawn Collection 2026</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -28,24 +27,11 @@
             color: #d63384;
             font-weight: bold;
             font-size: 1.2rem;
-=======
-    <title>My Book Collection</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f4f4; text-align: center; }
-        .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
-        .book-card { 
-            background: white; margin: 15px; padding: 15px; 
-            border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 200px; 
->>>>>>> 074a4ba1af7e6732aec77f7bac443fdb72aa71c7
         }
-        .book-card img { width: 100%; border-radius: 4px; height: 280px; object-fit: cover; }
-        h3 { font-size: 1.1em; margin: 10px 0 5px; }
-        p { color: #666; font-size: 0.9em; }
     </style>
 </head>
 <body>
 
-<<<<<<< HEAD
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
     <div class="container">
         <a class="navbar-brand fw-bold" href="#">LAWN LUXE</a>
@@ -81,19 +67,6 @@
                     <button class="btn btn-outline-dark w-100 btn-sm">Add to Cart</button>
                 </div>
             </div>
-=======
-    <h1>📚 My Personal Library</h1>
-
-    <div class="container">
-        {% for book in books %}
-        <div class="book-card">
-            <img src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-M.jpg" 
-                 alt="{{ book.title }}" 
-                 onerror="this.src='https://via.placeholder.com/200x280?text=No+Cover';">
-            
-            <h3>{{ book.title }}</h3>
-            <p>By {{ book.author }}</p>
->>>>>>> 074a4ba1af7e6732aec77f7bac443fdb72aa71c7
         </div>
         {% endfor %}
     </div>
