@@ -2,45 +2,45 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# Summer Lawn Collection Data
-products = [
+# Summer Lawn Data
+lawn_collection = [
     {
         "id": 1,
-        "name": "Floral Breeze 3-Piece",
-        "price": "PKR 4,500",
-        "category": "Unstitched",
-        "image_url": "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?q=80&w=800",
-        "description": "Premium quality lawn with digital floral print."
+        "title": "Zinnia Floral 3-PC",
+        "price": "PKR 4,950",
+        "tag": "New Arrival",
+        "image": "https://images.unsplash.com/photo-1621330396173-e41b1cafd17f?auto=format&fit=crop&q=80&w=800",
+        "desc": "Digital printed lawn shirt with swiss voil dupatta."
     },
     {
         "id": 2,
-        "name": "Azure Sky Embroidered",
-        "price": "PKR 6,200",
-        "category": "Stitched",
-        "image_url": "https://images.unsplash.com/photo-1617175548912-1ce8fa60bc33?q=80&w=800",
-        "description": "Luxurious lawn with intricate neck embroidery."
+        "title": "Midnight Ebony",
+        "price": "PKR 5,200",
+        "tag": "Trending",
+        "image": "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&q=80&w=800",
+        "desc": "Embroidered Schiffli lawn with dyed cambric trousers."
     },
     {
         "id": 3,
-        "name": "Sunset Gold Voile",
-        "price": "PKR 3,800",
-        "category": "Unstitched",
-        "image_url": "https://images.unsplash.com/photo-1621330396173-e41b1cafd17f?q=80&w=800",
-        "description": "Lightweight summer lawn with chiffon dupatta."
+        "title": "Oceanic Mist",
+        "price": "PKR 3,850",
+        "tag": "Best Seller",
+        "image": "https://images.unsplash.com/photo-1617175548912-1ce8fa60bc33?auto=format&fit=crop&q=80&w=800",
+        "desc": "Classic 2-piece pastel collection for daily wear."
     },
     {
         "id": 4,
-        "name": "Mint Fresh Cotton",
-        "price": "PKR 5,500",
-        "category": "Pret",
-        "image_url": "https://images.pexels.com/photos/10350519/pexels-photo-10350519.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "description": "Soft breathable cotton for peak summer comfort."
+        "title": "Saffron Glow",
+        "price": "PKR 6,100",
+        "tag": "Luxury",
+        "image": "https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&q=80&w=800",
+        "desc": "Heavy festive embroidery on premium cotton lawn."
     }
 ]
 
 @app.route('/')
 def home():
-    return render_template('index.html', collection=products)
+    return render_template('index.html', products=lawn_collection)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5024, debug=True)
