@@ -1,73 +1,93 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summer Luxe | Lawn 2026</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Winter Store 2026</title>
     <style>
-        :root { --primary-color: #2c3e50; --accent-color: #e67e22; }
-        body { background-color: #fcfcfc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        .navbar-brand { font-weight: 800; letter-spacing: 2px; color: var(--primary-color) !important; }
-        .product-card { border: none; transition: 0.4s; background: transparent; }
-        .product-card:hover { transform: translateY(-10px); }
-        .img-container { overflow: hidden; border-radius: 8px; position: relative; }
-        .product-img { height: 450px; object-fit: cover; width: 100%; transition: 0.5s; }
-        .product-card:hover .product-img { scale: 1.1; }
-        .badge-tag { position: absolute; top: 10px; left: 10px; background: var(--accent-color); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; }
-        .btn-buy { background: var(--primary-color); color: white; border-radius: 0; padding: 10px; }
-        .btn-buy:hover { background: #000; color: white; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eef2f3;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background: #1a2a6c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px;
+            gap: 25px;
+        }
+        .card {
+            background: white;
+            width: 280px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: 0.3s;
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 2px solid #f1f1f1;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .card-body h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .card-body p {
+            color: #1a2a6c;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .buy-btn {
+            background: #1a2a6c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        .buy-btn:hover {
+            background: #b21f1f;
+        }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
+    <div class="navbar">❄️ WINTER COLLECTION 2026 ❄️</div>
+
     <div class="container">
-        <a class="navbar-brand" href="#">SUMMER LUXE</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto text-uppercase small fw-bold">
-                <li class="nav-item"><a class="nav-link" href="#">New In</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Unstitched</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Pret</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<div class="container-fluid bg-light py-5 text-center border-bottom mb-5">
-    <h1 class="display-5 fw-bold">Lawn Collection 2026</h1>
-    <p class="text-muted">Explore the essence of summer with our breathable fabrics.</p>
-</div>
-
-<div class="container">
-    <div class="row g-4">
-        {% for p in products %}
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="card h-100 product-card">
-                <div class="img-container">
-                    <span class="badge-tag">{{ p.tag }}</span>
-                    <img src="{{ p.image }}" class="product-img" alt="{{ p.title }}">
-                </div>
-                <div class="card-body px-0 text-center">
-                    <h5 class="card-title h6 fw-bold mb-1">{{ p.title }}</h5>
-                    <p class="text-muted small mb-2">{{ p.desc }}</p>
-                    <p class="fw-bold mb-3" style="color: var(--accent-color);">{{ p.price }}</p>
-                    <button class="btn btn-buy w-100 text-uppercase small">Add to Cart</button>
-                </div>
+        {% for item in collection %}
+        <div class="card">
+            <img src="{{ item.image }}" alt="{{ item.name }}">
+            <div class="card-body">
+                <h3>{{ item.name }}</h3>
+                <p>{{ item.price }}</p>
+                <button class="buy-btn">Order Now</button>
             </div>
         </div>
         {% endfor %}
     </div>
-</div>
 
-<footer class="mt-5 py-5 bg-white text-center border-top">
-    <p class="text-muted small mb-0">&copy; 2026 Summer Luxe Official. All rights reserved.</p>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
