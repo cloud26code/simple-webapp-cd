@@ -3,88 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Winter Store 2026</title>
+    <title>My Book Collection</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #eef2f3;
-            margin: 0;
-            padding: 0;
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; text-align: center; }
+        .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
+        .book-card { 
+            background: white; margin: 15px; padding: 15px; 
+            border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 200px; 
         }
-        .navbar {
-            background: #1a2a6c;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 40px;
-            gap: 25px;
-        }
-        .card {
-            background: white;
-            width: 280px;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: 0.3s;
-            text-align: center;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-        }
-        .card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-bottom: 2px solid #f1f1f1;
-        }
-        .card-body {
-            padding: 20px;
-        }
-        .card-body h3 {
-            margin: 10px 0;
-            color: #333;
-        }
-        .card-body p {
-            color: #1a2a6c;
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .buy-btn {
-            background: #1a2a6c;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 16px;
-        }
-        .buy-btn:hover {
-            background: #b21f1f;
-        }
+        .book-card img { width: 100%; border-radius: 4px; height: 280px; object-fit: cover; }
+        h3 { font-size: 1.1em; margin: 10px 0 5px; }
+        p { color: #666; font-size: 0.9em; }
     </style>
 </head>
 <body>
 
-    <div class="navbar">❄️ WINTER COLLECTION 2026 ❄️</div>
+    <h1>📚 My Personal Library</h1>
 
     <div class="container">
-        {% for item in collection %}
-        <div class="card">
-            <img src="{{ item.image }}" alt="{{ item.name }}">
-            <div class="card-body">
-                <h3>{{ item.name }}</h3>
-                <p>{{ item.price }}</p>
-                <button class="buy-btn">Order Now</button>
-            </div>
+        {% for book in books %}
+        <div class="book-card">
+            <img src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-M.jpg" 
+                 alt="{{ book.title }}" 
+                 onerror="this.src='https://via.placeholder.com/200x280?text=No+Cover';">
+            
+            <h3>{{ book.title }}</h3>
+            <p>By {{ book.author }}</p>
         </div>
         {% endfor %}
     </div>

@@ -2,32 +2,30 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+# Fake database: Aap yahan apne books ka data add kar sakte hain
+# Cover images ke liye hum Open Library ka link use kar rahe hain:
+# https://covers.openlibrary.org/b/isbn/[ISBN_NUMBER]-M.jpg
+books_collection = [
+    {
+        "title": "The Alchemist",
+        "author": "Paulo Coelho",
+        "isbn": "9780062315007"
+    },
+    {
+        "title": "Atomic Habits",
+        "author": "James Clear",
+        "isbn": "9781847941831"
+    },
+    {
+        "title": "Harry Potter",
+        "author": "J.K. Rowling",
+        "isbn": "9780545162074"
+    }
+]
+
 @app.route('/')
-def home():
-    # Winter Collection with Reliable Dynamic Links
-    products = [
-        {
-            "name": "Heavy Puffer Jacket", 
-            "price": "Rs. 5,500", 
-            "image": "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=500"
-        },
-        {
-            "name": "Woolen Sweater", 
-            "price": "Rs. 2,800", 
-            "image": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=500"
-        },
-        {
-            "name": "Premium Overcoat", 
-            "price": "Rs. 8,500", 
-            "image": "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=500"
-        },
-        {
-            "name": "Warm Beanie Cap", 
-            "price": "Rs. 950", 
-            "image": "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=500"
-        }
-    ]
-    return render_template('index.html', collection=products)
+def index():
+    return render_template('index.html', books=books_collection)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5024, debug=True)
