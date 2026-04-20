@@ -4,27 +4,27 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    # Winter Collection with Reliable Dynamic Links
+    # Minimal & Modest Jewelry Collection
     products = [
         {
-            "name": "Heavy Puffer Jacket", 
-            "price": "Rs. 5,500", 
-            "image": "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=500"
+            "name": "Dainty Gold Necklace", 
+            "price": "Rs. 12,500", 
+            "image": "https://images.unsplash.com/photo-1599643478123-242f19bab94f?w=500"
         },
         {
-            "name": "Woolen Sweater", 
-            "price": "Rs. 2,800", 
-            "image": "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=500"
+            "name": "Minimalist Pearl Studs", 
+            "price": "Rs. 4,500", 
+            "image": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500"
         },
         {
-            "name": "Premium Overcoat", 
-            "price": "Rs. 8,500", 
-            "image": "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=500"
+            "name": "Sterling Silver Bangle", 
+            "price": "Rs. 8,200", 
+            "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500"
         },
         {
-            "name": "Warm Beanie Cap", 
-            "price": "Rs. 950", 
-            "image": "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=500"
+            "name": "Elegant Band Ring", 
+            "price": "Rs. 3,800", 
+            "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500"
         }
     ]
     return render_template('index.html', collection=products)
